@@ -994,12 +994,14 @@ static VOID  _nx_driver_get_status(NX_IP_DRIVER *driver_req_ptr)
 
     /* Indicate an unsuccessful request.  */
     driver_req_ptr -> nx_ip_driver_status =  NX_DRIVER_ERROR;
-  }
+    *driver_req_ptr -> nx_ip_driver_return_ptr = NX_FALSE;
+    }
   else
   {
 
     /* Indicate the request was successful.   */
     driver_req_ptr -> nx_ip_driver_status =  NX_SUCCESS;
+    *driver_req_ptr -> nx_ip_driver_return_ptr = NX_TRUE;
   }
 }
 
